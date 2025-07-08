@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:vm="clr-namespace:ExamenP3Ejercicio10Vallejo.ViewModels"
+            x:Class="ExamenP3Ejercicio10Vallejo.Views.FormularioPage"
+            Title="Sebastian Vallejo - 10/02/2000">
+    <ContentPage.BindingContext>
+        <vm:SuscripcionViewModels />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+            <Label Text="Servicio" />
+            <Entry Placeholder="Netflix, Prime..." Text="{Binding NuevaSuscripcion.Servicio}" />
+            <Label Text="Correo Asociado" />
+            <Entry Placeholder="correo@ejemplo.com" Text="{Binding NuevaSuscripcion.CorreoAsociado}" />
+            <Label Text="Costo Mensual" />
+            <Entry Keyboard="Numeric" Text="{Binding NuevaSuscripcion.CostoMensual}" />
+            <Label Text="Renovación Automática" />
+            <Switch IsToggled="{Binding NuevaSuscripcion.RenovacionAutomatica}" />
+            <Button Text="Guardar Suscripción" Command="{Binding GuardarCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
