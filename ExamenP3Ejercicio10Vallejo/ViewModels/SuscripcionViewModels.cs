@@ -17,7 +17,7 @@ namespace ExamenP3Ejercicio10Vallejo.ViewModels
         public Suscripcion NuevaSuscripcion { get; set; } = new ();
         public SuscripcionViewModels()
         {
-            db = App.Database;
+            db = ExamenP3Ejercicio10Vallejo.App.Database;
             GuardarCommand= new Command(async () => await GuardarSuscripcion());
             CargarSuscripciones();
         }
